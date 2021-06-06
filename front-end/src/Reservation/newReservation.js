@@ -19,7 +19,7 @@ export default function NewReservation({ reservation, setReservation, onSubmit})
     }
     return (
             <main>
-                <h1>Create a new reservation</h1>
+                <h1 className="p-3">Create a new reservation</h1>
                 <ErrorAlert error={error} />
                 <ReservationForm reservation={reservation} setReservation={setReservation} onSubmit={submitHanlder} onCancel={onCancel}/>
         </main>

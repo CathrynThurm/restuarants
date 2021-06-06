@@ -53,7 +53,7 @@ export const Search = ({search, setSearch, onSubmit}) => {
     }
       return (
       <main>
-      <h1>Search Reservations</h1>
+      <h1 className="m-3">Search Reservations</h1>
       <ErrorAlert error={error}/>
       <SearchForm search={search} setSearch={setSearch} onSubmit={submitSearch} onCancel={onCancel}/>
       <div>{cards}</div>
@@ -62,7 +62,7 @@ export const Search = ({search, setSearch, onSubmit}) => {
   }
   return (
     <main>
-    <h1>Search Reservations</h1>
+    <h1 className="m-3">Search Reservations</h1>
     <ErrorAlert error={error}/>
     <SearchForm search={search} setSearch={setSearch} onSubmit={submitSearch} onCancel={onCancel}/>
   </main>

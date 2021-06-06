@@ -27,9 +27,10 @@ export default function SeatReservation() {
 
     return (
         <main>
-            <h1>Tables</h1>
+            <h1 className="m-3">Seat Reservation</h1>
+            <h2 className="m-3">Tables</h2>
             <ErrorAlert error={error} />
-            <p>{cards}</p>
+            <div className="row">{cards}</div>
         </main>
     )
 }

@@ -19,7 +19,7 @@ export const Tables = ({ table, setTable, onSubmit}) => {
   }
     return (
         <main>
-          <h1>Create a New Table</h1>
+          <h1 className="p-3">Create a New Table</h1>
           <ErrorAlert error={error}/>
           <TableForm table={table} setTable={setTable} onSubmit={submitHanlder} onCancel={onCancel}/>
         </main>

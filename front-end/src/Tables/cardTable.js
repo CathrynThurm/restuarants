@@ -28,7 +28,7 @@ function TableCard({ table, res_id }) {
     }
   if(status === "Free") {
     return (
-      <div className="col-sm-12 col-md-6 col-lg-3 my-2">
+      <div className="col">
         <ErrorAlert error={error} />
         <div className="card">
           <div className="card-body">

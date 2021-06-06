@@ -34,59 +34,69 @@ export default function ReservationForm({
     }
     return (
         <form onSubmit={submitHander}>
-                <label htmlFor="first_name">
-                    First Name:
+            <div className="form-group">
+                <label htmlFor="first_name">First Name: </label>
                     <input
+                    className="form-control col-3"
                     id="first_name"
                     type="text"
                     name="first_name"
                     onChange={changeHandler}
                     value={reservation.first_name}
-                    required />
-                </label>
+                    required /> </div>
+            <div className="form-group">
                 <label htmlFor="last_name">
-                    Last Name:
+                    Last Name: </label>
                     <input
+                    className="form-control col-3"
                     id="last_name"
                     type="text"
                     name="last_name"
                     onChange={changeHandler}
                     value={reservation.last_name}
-                    required />
-                </label>
+                    required /> 
+                </div>
+            <div className="form-group">
                 <label htmlFor="mobile_number" >
-                    Phone Number:
+                    Phone Number: </label>
                     <input
+                    className="form-control col-3"
                     id="mobile_number"
                     type="text"
                     name="mobile_number"
                     onChange={changeHandler}
                     value={reservation.mobile_number}
                     required />
-                </label>
+            </div>
+            <div className="form-group">
                 <label htmlFor="reservation_date">
-                    Reservation Date:
+                    Reservation Date: </label>
                     <input
+                    className="form-control col-3"
                     id="reservation_date"
                     type="date"
                     name="reservation_date"
                     onChange={changeHandler}
                     value={reservation.reservation_date}
                     required />
-                </label>
+            </div>
+            <div className="form-group">
                 <label htmlFor="reservation_time">
-                    Reservation Time:
+                    Reservation Time: </label>
                     <input
+                    className="form-control col-3"
                     id="reservation_time"
                     type="time"
                     name="reservation_time"
                     onChange={changeHandler}
                     value={reservation.reservation_time}
                     required />
-                </label>
+            </div>
+            <div className="form-group">
                 <label htmlFor="people">
-                    Party size:
+                    Party size: </label>
                     <input
+                    className="form-control col-3"
                     id="people"
                     type="number"
                     min="1"
@@ -95,9 +105,9 @@ export default function ReservationForm({
                     onChange={peopleChangeHandler}
                     value={reservation.people}
                     required />
-                </label>
-                <button type="submit">Submit</button>
-                <button onClick={onCancel}>Cancel</button>
+            </div>
+                <button className="m-5 btn btn-dark" type="submit">Submit</button>
+                <button className="btn btn-dark" onClick={onCancel}>Cancel</button>
             </form>
     )
 }

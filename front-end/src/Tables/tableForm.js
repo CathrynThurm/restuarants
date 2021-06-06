@@ -28,19 +28,23 @@ export default function TableForm({
     }
     return (
               <form onSubmit={submitHandler}>
+                  <div className="form-group">
                   <label htmlFor="table_name">
-                      Table Name:
+                      Table Name: </label>
                       <input
+                      className="form-control col-3"
                       id="table_name"
                       type="text"
                       name="table_name"
                       onChange={changeHandler}
                       value={table.table_name}
                       required />
-                  </label>
+                  </div>
+                  <div className="form-group">
                   <label htmlFor="capacity">
-                      Table Capacity:
+                      Table Capacity: </label>
                       <input
+                      className="form-control col-3"
                       id="capacity"
                       type="number"
                       min="1"
@@ -49,9 +53,9 @@ export default function TableForm({
                       onChange={capacityHandler}
                       value={table.capacity}
                       required />
-                  </label>
-                  <button type="submit">Submit</button>
-                  <button onClick={onCancel}>Cancel</button>
+                    </div>
+                  <button className="m-5 btn btn-dark" type="submit">Submit</button>
+                  <button className="btn btn-dark" onClick={onCancel}>Cancel</button>
               </form>
     )
 }

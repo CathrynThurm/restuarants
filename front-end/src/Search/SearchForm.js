@@ -22,9 +22,11 @@ export default function SearchForm({
     }
     return (
         <form onSubmit={submitHandler}>
+            <div className="form-group ml-3">
             <label htmlFor="search">
-                Search:
+                Search: </label>
                 <input
+                className="form-control col-3"
                 id="mobile_number"
                 type="text"
                 name="mobile_number"
@@ -32,9 +34,9 @@ export default function SearchForm({
                 value={search.mobile_number}
                 placeholder="Phone number"
                 required />
-            </label>
-            <button type="submit">Search</button>
-            <button onClick={onCancel}>Cancel</button>
+            </div>
+            <button className="btn btn-dark m-3" type="submit">Search</button>
+            <button className="btn btn-dark m-3" onClick={onCancel}>Cancel</button>
         </form>
 )
 }

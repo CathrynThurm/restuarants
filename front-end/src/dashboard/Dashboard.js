@@ -105,20 +105,22 @@ function Dashboard({ date }) {
 
   return (
     <main>
-      <h1>Dashboard</h1>
+      <h1 className="p-3">Dashboard</h1>
       <div className="d-md-flex mb-3">
-        <h4 className="mb-0">Reservations for date {date}</h4>
+        <h4 className="pl-3">Reservations for date {date}</h4>
       </div>
       <div>
-        <button onClick={() => onDateChange(false)}>Previous</button>
-        <button onClick={onToday}>Today</button>
-        <button onClick={() => onDateChange(true)}>Next</button>
+        <button className="m-2 btn btn-dark" onClick={() => onDateChange(false)}>Previous</button>
+        <button className="m-2 btn btn-dark" onClick={onToday}>Today</button>
+        <button className="m-2 btn btn-dark" onClick={() => onDateChange(true)}>Next</button>
       </div>
       <ErrorAlert error={reservationsError} />
       {resCards}
-      <h4>Tables</h4>
+      <h4 className="p-3">Tables</h4>
       <ErrorAlert error={tablesError} />
+      <div className="row">
       {tableCards}
+      </div>
     </main>
   );
 }

@@ -20,7 +20,7 @@ function DashTableCard({ table, onFinish }) {
   }
   else {
     return (
-      <div className="col-sm-12 col-md-6 col-lg-3 my-2">
+      <div>
         <ErrorAlert error={error} />
         <div className="card">
           <div className="card-body">
