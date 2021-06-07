@@ -1,14 +1,11 @@
-import React, {useState} from "react";
-import ErrorAlert from "../layout/ErrorAlert"
+import React from "react";
 
 
 function DashTableCard({ table, onFinish }) {
-  const [error, setError] = useState(null)
 
   if(!table.reservation_id) {
     return (
       <div className="col-sm-12 col-md-6 col-lg-3 my-2">
-        <ErrorAlert error={error} />
         <div className="card">
           <div className="card-body">
             <h5 className="card-title text-truncate">{table.table_name} - {table.capacity}</h5>
@@ -21,7 +18,6 @@ function DashTableCard({ table, onFinish }) {
   else {
     return (
       <div>
-        <ErrorAlert error={error} />
         <div className="card">
           <div className="card-body">
             <h5 className="card-title text-truncate">{ table.table_name} - {table.capacity}</h5>

@@ -21,7 +21,7 @@ export default function SeatReservation() {
     }
 
     let cards = tables.map((table) =>
-        <TableCard table={table} res_id={reservation_id}>
+        <TableCard key={table.table_id} table={table} res_id={reservation_id}>
         </TableCard>
     )
 

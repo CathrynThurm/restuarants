@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { setDefaultOptions } = require('expect-puppeteer');
 const fs = require("fs");
 const fsPromises = fs.promises;
 
@@ -18,6 +19,7 @@ describe("US-04 - Seat reservation - E2E", () => {
 
   beforeAll(async () => {
     await fsPromises.mkdir("./.screenshots", { recursive: true });
+    setDefaultOptions({ timeout: 1000 });
     browser = await puppeteer.launch();
   });
 
@@ -142,7 +144,7 @@ describe("US-04 - Seat reservation - E2E", () => {
       expect(page.url()).toContain("/reservations/new");
     });
   });
-//
+
   describe("/reservations/:reservation_id/seat page", () => {
     let reservation;
 
@@ -218,7 +220,7 @@ describe("US-04 - Seat reservation - E2E", () => {
         waitUntil: "networkidle0",
       });
     });
-    // TODO
+
     // eslint-disable-next-line no-template-curly-in-string
     test("seat button has href with /reservations/${reservation_id}/seat", async () => {
       await page.screenshot({

@@ -65,6 +65,7 @@ function Dashboard({ date }) {
   function onDateChange(next) {
     const urlParams = new URLSearchParams(window.location.search);
     let myParam = urlParams.get('date');
+    if(!myParam) { myParam = today()}
     myParam = myParam.replaceAll("-", "/")
     let param = new Date(myParam)
     let date = new Date(param)
@@ -92,13 +93,13 @@ function Dashboard({ date }) {
 
   if(reservations) {
     resCards = reservations.map((reservation) =>
-    <ResCard reservation={reservation} onEdit={onEdit} onDelete={onDelete}>
+    <ResCard key={reservation.reservation_id} reservation={reservation} onEdit={onEdit} onDelete={onDelete}>
     </ResCard>
   )
   } 
   if(tables) {
     tableCards = tables.map((table) => 
-      <DashTableCard table={table} onFinish={onFinish}>
+      <DashTableCard key={table.table_id} table={table} onFinish={onFinish}>
       </DashTableCard>
     )
   }
@@ -115,6 +116,7 @@ function Dashboard({ date }) {
         <button className="m-2 btn btn-dark" onClick={() => onDateChange(true)}>Next</button>
       </div>
       <ErrorAlert error={reservationsError} />
+      <ErrorAlert error={error} />
       {resCards}
       <h4 className="p-3">Tables</h4>
       <ErrorAlert error={tablesError} />

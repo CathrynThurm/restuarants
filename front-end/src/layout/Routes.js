@@ -1,9 +1,3 @@
-import React from "react";
-
-import { Route, Switch, useLocation } from "react-router-dom";
-import Dashboard from "../dashboard/Dashboard";
-//import NotFound from "./NotFound";
-import { today } from "../utils/date-time";
 
 /**
  * Defines all the routes for the application.
@@ -12,12 +6,12 @@ import { today } from "../utils/date-time";
  *
  * @returns {JSX.Element}
  */
- function useQuery() {
+ /*function useQuery() {
   return new URLSearchParams(useLocation().search);
-}
+}*/
 
 function Routes() {
-  let date = useQuery().get("date")
+  /*let date = useQuery().get("date")
   let param = date
   if(!date) {
     param = today()
@@ -35,7 +29,8 @@ function Routes() {
         <Dashboard date={param} />
       </Route>
     </Switch>
-  );
+  );*/
+  return null
 }
 
 export default Routes;

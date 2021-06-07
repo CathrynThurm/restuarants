@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { setDefaultOptions } = require('expect-puppeteer');
 const fs = require("fs");
 const fsPromises = fs.promises;
 
@@ -18,6 +19,7 @@ describe("US-05 - Finish an occupied table - E2E", () => {
 
   beforeAll(async () => {
     await fsPromises.mkdir("./.screenshots", { recursive: true });
+    setDefaultOptions({ timeout: 1000 });
     browser = await puppeteer.launch();
   });
 
@@ -53,7 +55,7 @@ describe("US-05 - Finish an occupied table - E2E", () => {
       });
       await page.reload({ waitUntil: "networkidle0" });
     });
-    // TODO
+
     test("clicking finish button and then clicking OK makes that table available", async () => {
       await page.screenshot({
         path: ".screenshots/us-05-dashboard-finish-button-before.png",

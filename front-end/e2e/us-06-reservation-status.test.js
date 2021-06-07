@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { setDefaultOptions } = require('expect-puppeteer');
 const fs = require("fs");
 const fsPromises = fs.promises;
 
@@ -18,6 +19,7 @@ describe("US-06 - Reservation status - E2E", () => {
 
   beforeAll(async () => {
     await fsPromises.mkdir("./.screenshots", { recursive: true });
+    setDefaultOptions({ timeout: 1000 });
     browser = await puppeteer.launch();
   });
 
@@ -58,7 +60,7 @@ describe("US-06 - Reservation status - E2E", () => {
         path: ".screenshots/us-06-dashboard-displays-status.png",
         fullPage: true,
       });
-      //TODO 
+
       const containsBooked = await containsText(
         page,
         `[data-reservation-id-status="${reservation.reservation_id}"]`,
@@ -82,7 +84,7 @@ describe("US-06 - Reservation status - E2E", () => {
         path: ".screenshots/us-06-seated-after.png",
         fullPage: true,
       });
-      // need to change to seated
+
       const containsSeated = await containsText(
         page,
         `[data-reservation-id-status="${reservation.reservation_id}"]`,
@@ -107,7 +109,6 @@ describe("US-06 - Reservation status - E2E", () => {
         fullPage: true,
       });
 
-      //TODO make this selector on finish button
       const finishButtonSelector = `[data-table-id-finish="${table.table_id}"]`;
       await page.waitForSelector(finishButtonSelector);
 
